@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Editorial New';
+  src: url('https://db.onlinewebfonts.com/t/292dbefc2fe791cf1dffa63991adad04.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Editorial New';
+  src: url('https://db.onlinewebfonts.com/t/288f619586111fdbbc040ea49e3cb1ad.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@theme {
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Editorial New", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+
+  --color-black: #4f1636;
+  --color-gray-50: #f1eaec;
+  --color-gray-100: #dccfd3;
+  --color-gray-200: #c2b0b4;
+  --color-gray-300: #a79296;
+  --color-gray-400: #896f73;
+  --color-gray-500: #896f73;
+  --color-gray-600: #896f73;
+  --color-gray-700: #896f73;
+  --color-gray-800: #4f1636;
+  --color-gray-900: #4f1636;
+  --color-gray-950: #4f1636;
+}
+
+:root {
+  --color-black: #4f1636;
+  background-color: #fff4e8;
+  color: #4f1636;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fff4e8;
+  color: #4f1636;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .hero-text {
+  transition: font-style 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, .hero-text:hover,
+h1:active, h2:active, h3:active, h4:active, h5:active, h6:active, .hero-text:active {
+  font-style: italic;
+}
+
+/* Selection style */
+::selection {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-900);
+}
+::-moz-selection {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-900);
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fff4e8;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+@utility glass-panel {
+  background-image: linear-gradient(to bottom right, rgba(255,255,255,0.3), rgba(255,255,255,0.05));
+  backdrop-filter: blur(40px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 24px 60px rgba(79, 22, 54, 0.1), inset 0 1px 4px rgba(255, 255, 255, 0.5);
+}
+
+@utility glass-badge {
+  background-image: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 8px 32px rgba(79, 22, 54, 0.08), inset 0 1px 4px rgba(255, 255, 255, 0.6);
+}
+
+@utility glass-card {
+  background-image: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.02));
+  backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 4px rgba(255, 255, 255, 0.4);
+}
+
+@utility glass-nav {
+  background-image: linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,255,255,0.4));
+  backdrop-filter: blur(40px) saturate(150%);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 12px 40px rgba(79, 22, 54, 0.08), inset 0 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
